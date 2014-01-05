@@ -1,1 +1,1 @@
-add_library(helpers proc_parser.c)
+add_library(helpers SHARED proc_parser.c)
