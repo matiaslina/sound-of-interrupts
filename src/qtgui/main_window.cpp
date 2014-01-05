@@ -13,9 +13,10 @@ void MainWindow::update_interrupts(uint32_t *interrupts)
 {
     char buf[1024] = "";
     char aux[32] = "";
-    int i;
+    unsigned int i;
     assert(this->cpu_count > 0);
 
+    buf[1023] = '\0';
     for(i = 0; i < this->cpu_count; i++)
     {
         sprintf(aux, "CPU%d: %d\n", i, interrupts[i]);
