@@ -14,7 +14,7 @@
 #include <pulse/simple.h>
 #include <pulse/error.h>
 
-#include "proc_parser.h"
+#include "helpers/proc_parser.h"
 
 #define BUFSIZE 1024
 
