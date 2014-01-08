@@ -1,7 +1,7 @@
 find_package(Qt4 REQUIRED)
 
-set(SOI_QTGUI_SOURCES main.cpp main_window.cpp thread.cpp)
-set(SOI_QTGUI_HEADERS main_window.h thread.h)
+set(SOI_QTGUI_SOURCES main.cpp main_window.cpp thread.cpp graphic_widget.cpp)
+set(SOI_QTGUI_HEADERS main_window.h thread.h graphic_widget.h)
 
 QT4_WRAP_CPP(SOI_QTGUI_HEADERS_MOC ${SOI_QTGUI_HEADERS})
 

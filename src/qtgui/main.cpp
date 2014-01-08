@@ -15,11 +15,12 @@ main(int argc, char *argv[])
     QObject::connect((const QObject*) &pt, SIGNAL(send_interrupts(uint32_t *)),
                      (const QObject*) &mw, SLOT(update_interrupts(uint32_t*)),
                      Qt::QueuedConnection);
+    pt.set_cpun(4);
     pt.start();
     mw.set_cpu_count(4);
-    mw.show();
 
     mw.update_interrupts(interrupts);
+    mw.show();
 
     app.exec();
     pt.finish();

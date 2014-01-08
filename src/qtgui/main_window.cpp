@@ -4,9 +4,22 @@
 MainWindow::MainWindow(void)
 {
     cpu_count = 0;
-    cpu_interrupts_label = new QLabel(this);
+
+    QVBoxLayout *layout = new QVBoxLayout;
+    
+    /* Set the label */
+    cpu_interrupts_label = new QLabel;
     cpu_interrupts_label->setText(QString("Retriving data from the cpus"));
-    setCentralWidget(cpu_interrupts_label);
+    
+    /* Set the graph */
+    this->graph = new GraphWidget;
+    this->graph->show();
+
+
+    layout->addWidget(this->graph);
+    layout->addWidget(cpu_interrupts_label);
+
+    setLayout(layout);
 }
 
 void MainWindow::update_interrupts(uint32_t *interrupts)

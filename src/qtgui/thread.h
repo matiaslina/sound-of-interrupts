@@ -7,6 +7,7 @@ class ProcThread : public QThread
 
     public:
         void finish(void);
+        void set_cpun(uint16_t count);
 
     signals:
         void send_interrupts(uint32_t *interrupts);
@@ -14,6 +15,8 @@ class ProcThread : public QThread
     private:
         void run();
 
-        uint32_t *interrupts_ptr;
+        uint32_t *interrupts_pre_ptr;
+        uint32_t *interrupts_post_ptr;
+        uint32_t cpun;
         bool running;
 };

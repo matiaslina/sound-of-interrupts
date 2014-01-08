@@ -6,10 +6,13 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "graphic_widget.h"
 
-class MainWindow : public QMainWindow
+class MainWindow : public QWidget
 {
     Q_OBJECT
+        QLabel *cpu_interrupts_label;
+        GraphWidget *graph;
     public:
         MainWindow(void);
         void set_cpu_count(uint32_t cpun);
@@ -24,7 +27,7 @@ class MainWindow : public QMainWindow
 
     private:
         uint32_t cpu_count;
-        QLabel *cpu_interrupts_label;
+
 };
 
 #endif
