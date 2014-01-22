@@ -19,6 +19,8 @@ class GraphWidget : public QWidget
 
     private:
         uint32_t divisors[G_DIVISORS];
+        uint32_t max;
+        void set_max(void);
 
     signals:
 

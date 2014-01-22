@@ -13,6 +13,7 @@ MainWindow::MainWindow(void)
     
     /* Set the graph */
     this->graph = new GraphWidget;
+
     this->graph->show();
 
 
