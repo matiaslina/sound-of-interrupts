@@ -20,6 +20,8 @@ MainWindow::MainWindow(void)
     layout->addWidget(cpu_interrupts_label);
 
     setLayout(layout);
+
+    this->resize(400,400);
 }
 
 void MainWindow::update_interrupts(uint32_t *interrupts)
@@ -27,6 +29,7 @@ void MainWindow::update_interrupts(uint32_t *interrupts)
     char buf[1024] = "";
     char aux[32] = "";
     unsigned int i;
+    uint32_t intr_sum = 0;
     assert(this->cpu_count > 0);
 
     buf[1023] = '\0';
@@ -34,7 +37,9 @@ void MainWindow::update_interrupts(uint32_t *interrupts)
     {
         sprintf(aux, "CPU%d: %d\n", i, interrupts[i]);
         strncat(buf, aux, strlen(aux));
+        intr_sum += interrupts[i];
     }
+    this->graph->update_(intr_sum);
 
     this->cpu_interrupts_label->setText(QString((const char *) buf));
 }
