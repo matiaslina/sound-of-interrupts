@@ -19,9 +19,23 @@ make
 
 ./src/play-cli
 ```
+## QT interface
+
+If you want to build a qt interface that shows a graphic with the
+number of interruptions of the CPU and play sounds as well. Just run
+
+```bash
+mkdir build && cd build
+WITH_QT=1 cmake ..
+make
+
+./src/qtgui/soi_qtgui
+```
+
+*Remember that you need the development files of qt4 to be able to
+compile this*
 
 ## To do
 
 * The gui need to be finished (doesn't play any sound :p)
-* Do some defines in the CMakeFiles for the gui build
 * Put some output in the cli
